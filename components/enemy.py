@@ -2,7 +2,7 @@ import pygame
 
 class Enemy(pygame.sprite.Sprite):
     def __init__(self, xpos, ypos, horizontal_speed, vertical_speed):
-        super(Enemy, self).__init__()
+        super().__init__()
         self.image = pygame.image.load("./images/enemy.png")
         self.rect = self.image.get_rect()
         self.rect.x = xpos
