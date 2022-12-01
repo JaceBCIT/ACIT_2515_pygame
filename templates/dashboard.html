@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<table>
+    <tr>
+        <th>User</th>
+        <th>Highest Score</th>
+    </tr>
+    {% for i in range(length) %}
+    <tr>
+        <td><a href={{ url_for('display_one_user', name=name[i] ) }}>{{ name[i] }}</a></td>
+        <td>{{ score[i] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

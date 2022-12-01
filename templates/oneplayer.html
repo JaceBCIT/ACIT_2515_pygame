@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<br>
+<h2>{{ uname }}</h2>
+<table>
+    <tr>
+        <th>Highest Score</th>
+        <th>Recent Score</th>
+    </tr>
+    
+    <tr>
+        <td>{{ json_dict[uname][0] }}</td>
+        <td>{{ json_dict[uname][1] }}</td>
+    </tr>
+
+</table>
+<br>
+<a href="/">Back</a>
+
+{% endblock %}
