@@ -34,14 +34,13 @@ class GameScreen(BaseScreen):
                 self.window.blit(background, pygame.Rect(i * bg_rect.width, j * bg_rect.height, bg_rect.width, bg_rect.height))
     
     def update(self):
+        #Set spawn occurence and speed depending on time
         now = pygame.time.get_ticks()
         time = round(((now - self.start_time) / 1000), 1)
         self.occur_enemies = 1 + int(time / 40)
         self.min_enemy_speed = 1 + int(time / 20)
         self.max_enemy_speed = 1 + int(time / 10)
-        #self.occur_enemies = 1 + int(self.score / 500)
-        #self.min_enemy_speed = 1 + int(self.score / 400)
-        #self.max_enemy_speed = 1 + int(self.score / 300)
+        
         self.backgrounds(self.background)
 
         if random.randint(1, self.occur_prob) == 1:

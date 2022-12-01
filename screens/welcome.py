@@ -8,7 +8,7 @@ class WelcomeScreen(BaseScreen):
 
     def draw(self):
         self.window.fill((0, 0, 0))
-        self.title = text('Dodge Aliens', self.window, 400, 175, (255, 255, 255))
+        self.title = text('Dodge Aliens', self.window, 400, 175, (102, 0, 204))
         self.play_button = text("Press 'S' to play", self.window, 400, 300, (255, 255, 255))
         self.quit_button = text("Press 'Q' to quit", self.window, 400, 350, (255, 255, 255))
 
