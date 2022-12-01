@@ -7,6 +7,7 @@ from subprocess import Popen
 
 
 class GameOverScreen(BaseScreen):
+    """Class for game over screen"""
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
@@ -21,6 +22,10 @@ class GameOverScreen(BaseScreen):
         self.write_json()
 
     def write_json(self):
+        """
+        Method to update json file
+        Only stores 2 scores, highest and most recent.
+        """
         with open("./data/data.json", "r") as f:
             self.data = json.load(f)
         
@@ -39,6 +44,11 @@ class GameOverScreen(BaseScreen):
             json.dump(self.data, f)
             
     def manage_event(self, event):
+        """
+        Manage key events
+        If player press 'P' key, run the flask and
+        open the browser to see the scoreboard.
+        """
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_s:
                 self.next_screen = "welcome"

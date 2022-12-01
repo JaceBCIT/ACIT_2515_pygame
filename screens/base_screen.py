@@ -1,14 +1,21 @@
 import pygame
 
 class BaseScreen:
-
+    """Base class for all game screens"""
     def __init__(self, window, state):
         self.window = window
         self.next_screen = False
         self.state = state
 
     def run(self):
-
+        """
+        This is the main method of the class.
+        It manages the event loop, and:
+        * ticks the clock at 60 FPS
+        * calls `update` and `draw`
+        * calls `manage_event` for each event received
+        * quits the game if the quit button is clicked, or the Escape key is pressed
+        """
         clock = pygame.time.Clock()
         self.running = True
         while self.running:
@@ -29,7 +36,6 @@ class BaseScreen:
 
     @property
     def rect(self):
-
         return self.window.get_rect()
 
     def draw(self):

@@ -3,6 +3,7 @@ from screens import BaseScreen
 from components import text
 
 class UsernameScreen(BaseScreen):
+    """Screen for user to type their name"""
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.state["name"] = ""

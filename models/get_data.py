@@ -1,6 +1,7 @@
 import json
 
 class GetScore:
+    """Class to read json file"""
     def __init__(self):
         self.filename = "./data/data.json"
         self.users = []

@@ -28,13 +28,19 @@ class GameScreen(BaseScreen):
         self.player.set_position(*pygame.mouse.get_pos())
     
     def backgrounds(self, background):
+        """Method for updating background"""
         bg_rect = background.get_rect()
         for i in range(int(math.ceil(800 / bg_rect.width))):
             for j in range(int(math.ceil(600 / bg_rect.height))):
                 self.window.blit(background, pygame.Rect(i * bg_rect.width, j * bg_rect.height, bg_rect.width, bg_rect.height))
     
     def update(self):
-        #Set spawn occurence and speed depending on time
+        """
+        Set alien spawn occurences and speed depending on time
+        If player hits aliens, game over
+        If player hits bomb, add bomb count
+        """
+        
         now = pygame.time.get_ticks()
         time = round(((now - self.start_time) / 1000), 1)
         self.occur_enemies = 1 + int(time / 40)
@@ -76,6 +82,11 @@ class GameScreen(BaseScreen):
         self.window.blit(self.player.image, self.player.rect)
 
     def manage_event(self, event):
+        """
+        Manage mouse event
+        If player uses bomb, decrease bomb count, 
+        clear the aliens from the screen
+        """
         if event.type == pygame.MOUSEMOTION:
             mouse_pos = pygame.mouse.get_pos()
             if mouse_pos[0] <= 10:

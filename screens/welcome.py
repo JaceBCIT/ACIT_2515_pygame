@@ -3,6 +3,7 @@ from screens import BaseScreen
 from components import text
 
 class WelcomeScreen(BaseScreen):
+    """First screen to display"""
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
