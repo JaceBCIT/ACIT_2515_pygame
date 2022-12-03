@@ -1,14 +1,23 @@
 {% extends "base.html" %}
 {% block content %}
+<br>
+<br>
+<h2>Top 3 Player</h2>
+<br>
+<h3><b>Top Player: {{ score_list[0][0] }} - {{ score_list[0][1][0] }}</b></h3>
+<h4>Second: {{ score_list[1][0] }} - {{ score_list[1][1][0] }}</h4>
+<h4>Third: {{ score_list[2][0] }} - {{ score_list[2][1][0] }}</h4>
+
+<br>
 <table>
     <tr>
         <th>User</th>
         <th>Highest Score</th>
     </tr>
-    {% for i in range(length) %}
+    {% for name in json_dict %}
     <tr>
-        <td><a href={{ url_for('display_one_user', name=name[i] ) }}>{{ name[i] }}</a></td>
-        <td>{{ score[i] }}</td>
+        <td><a href={{ url_for('display_one_user', name=name ) }}>{{ name }}</a></td>
+        <td>{{ json_dict[name][0] }}</td>
     </tr>
     {% endfor %}
 </table>

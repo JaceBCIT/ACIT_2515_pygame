@@ -13,9 +13,3 @@ class GetScore:
         with open(self.filename, "r") as f:
             self.board = json.load(f)
 
-        for i in self.board.keys():
-            self.users.append(i)
-        
-        for j in self.board.values():
-            self.high_score.append(j[0])
-        
