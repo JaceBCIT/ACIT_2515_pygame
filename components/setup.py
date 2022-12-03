@@ -2,7 +2,7 @@ import random
 from .enemy import Enemy
 
 def setup(speed):
-    """Method to setup where Aliens spawn"""
+    """Method to setup where Aliens spawn in game screen"""
     random_direction = random.randint(1, 4)
     if random_direction == 1:
         return Enemy(random.randint(0, 800), 0, 0, speed)

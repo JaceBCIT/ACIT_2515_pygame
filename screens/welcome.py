@@ -8,6 +8,7 @@ class WelcomeScreen(BaseScreen):
         super().__init__(*args, **kwargs)
 
     def draw(self):
+        """Display Text on the screen"""
         self.window.fill((0, 0, 0))
         self.title = text('Dodge Aliens', self.window, 400, 175, (102, 0, 204))
         self.play_button = text("Press 'S' to play", self.window, 400, 300, (255, 255, 255))
@@ -15,6 +16,7 @@ class WelcomeScreen(BaseScreen):
 
 
     def manage_event(self, event):
+        """Key events to control screens"""
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_s:
                 self.next_screen = "username"

@@ -1,7 +1,7 @@
 import json
 
 class GetScore:
-    """Class to read json file"""
+    """Class to read json file and save it to variable"""
     def __init__(self):
         self.filename = "./data/data.json"
         self.users = []

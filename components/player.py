@@ -1,7 +1,7 @@
 import pygame
 
 class Spaceship(pygame.sprite.Sprite):
-    """Sprite for player"""
+    """Class to declare player sprite"""
     def __init__(self):
         super().__init__()
         self.image = pygame.image.load("./images/player.png")

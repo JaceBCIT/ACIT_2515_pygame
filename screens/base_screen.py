@@ -36,13 +36,18 @@ class BaseScreen:
 
     @property
     def rect(self):
+        """Useful property to check for boundaries and dimensions"""
+
         return self.window.get_rect()
 
     def draw(self):
+        """Child classes should override this method"""
         pass
 
     def update(self):
+        """Child classes should override this method"""
         pass
 
     def manage_event(self, event):
+        """Child classes should override this method"""
         pass

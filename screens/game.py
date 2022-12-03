@@ -7,6 +7,7 @@ from components import Spaceship, Bomb, BombGroup, setup, text
 
 
 class GameScreen(BaseScreen):
+    """Gamescreen inherits BaseScreen"""
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
