@@ -70,7 +70,8 @@ class GameScreen(BaseScreen):
         self.enemies.draw(self.window)
         self.bombs.draw(self.window)
         
-
+        #Removing all the bomb in the screen is on purpose
+        # to reduce the chances to get a lot of bombs
         if self.player.collide(self.enemies):
             self.enemies.empty()
             self.running = False
